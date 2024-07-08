@@ -12,9 +12,8 @@ use mongodb::error::Error;
 fn main() -> Result<(), Error> {
     let db_name = "rust-cosmos-demo";
     let collection_name = "tasks";
-    let connection_string = "cosmos-connection-string";
-
-    // Initialize mongo client using the given connection string
+    let connection_string = "";
+        // Initialize mongo client using the given connection string
     let client = MongoClient::connect(&connection_string)?;
 
     let mongo_client = Mongo::new(db_name.to_string(), collection_name.to_string(), client);
@@ -64,11 +63,11 @@ fn main() -> Result<(), Error> {
     };
 
     //************** Delete a document from the collection **************//
-    let delete_doc = doc! {"title" :"Pay AmeX bill"};
+   //let delete_doc = doc! {"title" :"Pay AmeX bill"};
 
-    let delete_result = mongo_client.delete(delete_doc).unwrap();
+    //let delete_result = mongo_client.delete(delete_doc).unwrap();
 
-    println!("Number of documents deleted: {:?}", delete_result);
+    //println!("Number of documents deleted: {:?}", delete_result);
 
     Ok(())
 }
